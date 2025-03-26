@@ -1014,6 +1014,12 @@ case ${target} in
   gnu_ld=yes
   default_use_cxa_atexit=yes
   ;;
+*-*-anos*)
+  gas=yes
+  gnu_ld=yes
+  default_use_cxa_atexit=yes
+  use_gcc_stdint=provide
+  ;;
 *-*-rtems*)
   case ${enable_threads} in
     "" | yes | rtems) thread_file='rtems' ;;
@@ -2318,6 +2324,12 @@ i[34567]86-*-mingw* | x86_64-*-mingw*)
 		*mingw32msv* | *mingw*)
 			;;
 	esac
+	;;
+x86_64-*-anos*)
+	tmake_file="${tmake_file} i386/t-x86_64-elf"
+	tm_file="${tm_file} i386/unix.h i386/att.h elfos.h i386/x86-64.h newlib-stdint.h anos/anos.h"
+	tm_defines="${tm_defines} __ANOS=1"
+	extra_options="${extra_options} anos/anos.opt"
 	;;
 x86_64-*-fuchsia*)
 	tmake_file="${tmake_file} i386/t-x86_64-elf"
