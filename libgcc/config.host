@@ -747,7 +747,7 @@ x86_64-*-anos*)
 	tmake_file="$tmake_file t-libgcc-pic"
 	extra_parts="$extra_parts crti.o crtn.o"
 	;;
-riscv*-*-anos*)
+riscv64-*-anos*)
 	tmake_file="$tmake_file t-libgcc-pic"
 	extra_parts="$extra_parts crti.o crtn.o"
 	;;

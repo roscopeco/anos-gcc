@@ -2336,7 +2336,7 @@ riscv64-*-anos)
 	tm_defines="${tm_defines} TARGET_DEFAULT_ASYNC_UNWIND_TABLES=1"
 	gnu_ld=yes
 	gas=yes
-	tm_file="elfos.h newlib-stdint.h ${tm_file} riscv/elf.h"
+	tm_file="elfos.h newlib-stdint.h ${tm_file} riscv/elf.h anos/anos.h"
 	tm_defines="${tm_defines} __ANOS=1"
 	extra_options="${extra_options} anos/anos.opt"
 	;;
