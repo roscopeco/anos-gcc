@@ -2331,6 +2331,15 @@ x86_64-*-anos*)
 	tm_defines="${tm_defines} __ANOS=1"
 	extra_options="${extra_options} anos/anos.opt"
 	;;
+riscv64-*-anos)
+	tmake_file="${tmake_file} riscv/t-riscv"
+	tm_defines="${tm_defines} TARGET_DEFAULT_ASYNC_UNWIND_TABLES=1"
+	gnu_ld=yes
+	gas=yes
+	tm_file="elfos.h newlib-stdint.h ${tm_file} riscv/elf.h"
+	tm_defines="${tm_defines} __ANOS=1"
+	extra_options="${extra_options} anos/anos.opt"
+	;;
 x86_64-*-fuchsia*)
 	tmake_file="${tmake_file} i386/t-x86_64-elf"
 	tm_file="${tm_file} i386/unix.h i386/att.h elfos.h newlib-stdint.h i386/i386elf.h i386/x86-64.h fuchsia.h"
