@@ -748,7 +748,7 @@ x86_64-*-anos*)
 	extra_parts="$extra_parts crti.o crtn.o"
 	;;
 riscv64-*-anos*)
-	tmake_file="$tmake_file t-libgcc-pic"
+	tmake_file="${tmake_file} riscv/t-crtstuff riscv/t-softfp${host_address} t-softfp riscv/t-elf riscv/t-elf${host_address} t-slibgcc-libgcc"
 	extra_parts="$extra_parts crti.o crtn.o"
 	;;
 i[34567]86-*-darwin*)
